@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shree Balaji Caterers – IIM Sambalpur Mess Menu</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#fff3e0;
+}
+
+.hero{
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
+    background-size:cover;
+    color:white;
+    padding:90px;
+    text-align:center;
+}
+
+.week-btn,.day-btn{
+    border-radius:25px;
+    margin:5px;
+    font-weight:600;
+}
+
+.menu-box{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+    margin-top:20px;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>Shree Balaji Caterers</h1>
+<p>IIM Sambalpur Mess Menu</p>
+</div>
+
+<div class="container text-center py-4">
+
+<h4>Select Week</h4>
+
+<button class="btn btn-success week-btn" onclick="setWeek('A')">
+Week A (Week 1 & 3)
+</button>
+
+<button class="btn btn-primary week-btn" onclick="setWeek('B')">
+Week B (Week 2 & 4)
+</button>
+
+<br><br>
+
+<h4>Select Day</h4>
+
+<button class="btn btn-warning day-btn" onclick="showMenu('mon')">Mon</button>
+<button class="btn btn-warning day-btn" onclick="showMenu('tue')">Tue</button>
+<button class="btn btn-warning day-btn" onclick="showMenu('wed')">Wed</button>
+<button class="btn btn-warning day-btn" onclick="showMenu('thu')">Thu</button>
+<button class="btn btn-warning day-btn" onclick="showMenu('fri')">Fri</button>
+<button class="btn btn-warning day-btn" onclick="showMenu('sat')">Sat</button>
+<button class="btn btn-warning day-btn" onclick="showMenu('sun')">Sun</button>
+
+<div id="menu" class="menu-box text-start">
+<h5>Please select Week and Day</h5>
+</div>
+
+</div>
+
+<script>
+
+let currentWeek="A";
+function setWeek(w){ currentWeek=w; }
+
+const menus={
+
+mon:{
+A:`<h3>Monday (Week 1 & 3)</h3>
+<b>Breakfast:</b> Poha, Banana, Tea<br>
+<b>Lunch:</b> Dal, Rice, Roti, Aloo Sabzi, Salad<br>
+<b>Snacks:</b> Samosa + Tea<br>
+<b>Dinner:</b> Paneer Butter Masala, Roti, Rice`,
+B:`<h3>Monday (Week 2 & 4)</h3>
+<b>Breakfast:</b> Poha, Banana, Tea<br>
+<b>Lunch:</b> Dal, Rice, Roti, Aloo Sabzi, Salad<br>
+<b>Snacks:</b> Bread Pakora + Tea<br>
+<b>Dinner:</b> Paneer Butter Masala, Roti, Rice`
+},
+
+tue:{
+A:`<h3>Tuesday</h3>
+Breakfast: Upma + Tea<br>
+Lunch: Rajma Rice + Roti<br>
+Snacks: Veg Sandwich<br>
+Dinner: Mix Veg + Roti`,
+B:`<h3>Tuesday</h3>
+Breakfast: Upma + Tea<br>
+Lunch: Rajma Rice + Roti<br>
+Snacks: Maggi<br>
+Dinner: Mix Veg + Roti`
+},
+
+wed:{
+A:`<h3>Wednesday</h3>
+Breakfast: Bread Omelette<br>
+Lunch: Chole Rice + Salad<br>
+Snacks: Biscuits + Tea<br>
+Dinner: Aloo Gobhi + Roti`,
+B:`<h3>Wednesday</h3>
+Breakfast: Bread Omelette<br>
+Lunch: Chole Rice + Salad<br>
+Snacks: Noodles<br>
+Dinner: Aloo Gobhi + Roti`
+},
+
+thu:{
+A:`<h3>Thursday</h3>
+Breakfast: Idli Sambhar<br>
+Lunch: Kadhi Rice + Roti<br>
+Snacks: Aloo Chop<br>
+Dinner: Paneer Curry + Roti`,
+B:`<h3>Thursday</h3>
+Breakfast: Idli Sambhar<br>
+Lunch: Kadhi Rice + Roti<br>
+Snacks: Bread Roll<br>
+Dinner: Paneer Curry + Roti`
+},
+
+fri:{
+A:`<h3>Friday</h3>
+Breakfast: Paratha + Pickle<br>
+Lunch: Veg Biryani + Raita<br>
+Snacks: Pakora<br>
+Dinner: Dal Fry + Roti`,
+B:`<h3>Friday</h3>
+Breakfast: Paratha + Pickle<br>
+Lunch: Veg Biryani + Raita<br>
+Snacks: Dhokla<br>
+Dinner: Dal Fry + Roti`
+},
+
+sat:{
+A:`<h3>Saturday</h3>
+Breakfast: Maggi + Tea<br>
+Lunch: Chicken Curry + Rice<br>
+Snacks: Sweet Dish<br>
+Dinner: Fried Rice`,
+B:`<h3>Saturday</h3>
+Breakfast: Maggi + Tea<br>
+Lunch: Chicken Curry + Rice<br>
+Snacks: Ice Cream<br>
+Dinner: Fried Rice`
+},
+
+sun:{
+A:`<h3>Sunday</h3>
+Breakfast: Poori Sabzi<br>
+Lunch: Paneer Special<br>
+Snacks: Pizza Slice<br>
+Dinner: Noodles`,
+B:`<h3>Sunday</h3>
+Breakfast: Poori Sabzi<br>
+Lunch: Paneer Special<br>
+Snacks: Burger<br>
+Dinner: Noodles`
+}
+
+};
+
+function showMenu(day){
+document.getElementById("menu").innerHTML=menus[day][currentWeek];
+}
+
+</script>
+
+</body>
+</html>
